@@ -3,7 +3,7 @@
   --clr-primary-mainbg: hsl(257, 40%, 49%);
   --clr-primary-hover-active: hsl(300, 69%, 71%);
   --clr-neutral-white: hsl(0, 0%, 100%);
-  --clr-neutral-white-transparent: hsla(0, 0%, 100%, 0.8);
+  --clr-neutral-white-transparent: hsla(0, 0%, 100%, 0.9);
 
   --ff-base: "Open Sans", sans-serif;
   --ff-accent: "Poppins", sans-serif;
@@ -100,147 +100,222 @@ select {
   width: 1px !important;
 }
 
+/* General Styling */
+body {
+  background: var(--clr-primary-mainbg) url(images/bg-mobile.svg) no-repeat;
+  background-size: contain;
+  background-position: 0 top;
+  min-height: 100vh;
+  display: grid;
+  color: var(--clr-neutral-white);
+  font-family: var(--ff-base);
+  font-size: 1.13rem;
+}
+
+/* Header Styling */
+header {
+  margin: 0 2rem;
+  height: 10vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Header Logo Styling */
+.header__logo {
+  max-width: 8.49rem;
+  padding-top: 0.3rem;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: 250ms ease-in;
+}
+
+/* Header Logo Hover Styling */
+.header__logo:hover {
+  transform: scale(1.1) translateX(0.5rem);
+}
+
+/* Main Container Styling */
+main {
+  max-width: 103.125rem;
+  padding: 0 2rem;
+  display: grid;
+  align-items: center;
+  margin: 0 auto;
+}
+
+/* Main Image Styling */
+.main__mockup,
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Main Content Styling */
+.main__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+@media screen and (max-width: 56.25em) {
+  .main__content {
+    text-align: center;
+  }
+}
+
+/* Main Button Styling */
+.btn-main {
+  background-color: var(--clr-neutral-white);
+  color: var(--clr-primary-mainbg);
+  box-shadow: 0.3px 6px 5px 1px hsla(0, 0%, 0%, 0.2);
+  text-decoration: none;
+  border: 0.063rem solid var(--clr-neutral-white);
+  border-radius: 64px;
+  padding: 0.6rem 5rem;
+  font-size: 0.8rem;
+  font-family: var(--ff-accent);
+  font-weight: var(--fw-regular-400);
+  transition: all 250ms ease-in-out;
+}
+
+/* Main Button Hover Styling */
+.btn-main:hover {
+  background-color: var(--clr-primary-hover-active);
+  color: var(--clr-neutral-white);
+  border-color: var(--clr-primary-hover-active);
+}
+
+/* Main Header Styling */
+h2 {
+  font-family: var(--ff-accent);
+  font-weight: var(--fw-semibold-600);
+  font-size: 1.5rem;
+}
+
+/* Main Paragraph Styling */
+p {
+  font-size: 1.02rem;
+  color: var(--clr-neutral-white-transparent);
+}
+
+/* Footer Styling */
+footer {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+/* Footer Social Media List Styling */
+.horizontal-list {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-right: 2rem;
+}
+
+.horizontal-list a {
+  width: 2.3rem;
+  height: 2.3rem;
+  text-decoration: none;
+  border: 0.06rem solid var(--clr-neutral-white);
+  border-radius: 50%;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  color: var(--clr-neutral-white);
+  font-size: 1rem;
+  transition: all 250ms ease-in-out;
+}
+
+/* Footer Attribution Styling */
+.attribution {
+  font-size: 0.7rem;
+  text-align: center;
+}
+
+.attribution a {
+  color: var(--clr-neutral-white);
+  transition: all 250ms ease-in-out;
+}
+
+/* Footer Hover Styling */
+.attribution a:hover,
+.horizontal-list a:hover {
+  color: var(--clr-primary-hover-active);
+  border-color: var(--clr-primary-hover-active);
+  text-decoration: none;
+}
+
 /* Desktop Responsiveness */
 
-@media screen and (min-width: 90em) {
-
+@media screen and (min-width: 56.25em) {
   /* General Styling */
   body {
-    background: var(--clr-primary-mainbg) url(images/bg-desktop.svg) no-repeat;
-    background-size: contain;
-    background-position: 0 top;
-    min-height: 100vh;
-    display: grid;
-    color: var(--clr-neutral-white);
-    font-family: var(--ff-base);
-    font-size: 1.13rem;
-  }
-  /* Header Styling */
-  header {
-    margin: 0 5rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    background-image: url(images/bg-desktop.svg);
   }
 
   /* Header Image Styling */
   .header__logo {
     max-width: 13.49rem;
-    padding-top: 0.3rem;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
   }
 
   /* Main Container Styling */
   main {
-    height: 70vh;
-    max-width: 103.125rem;
+    max-width: 130.125rem;
     padding: 0 4.5rem;
-    display: grid;
     grid-template-columns: 1.35fr 1fr;
     gap: 3.5rem;
-    align-items: center;
-    margin: 0 auto;
-  }
-  /* Main Image Styling */
-  .main__mockup,
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
   }
 
   /* Main Content Styling */
   .main__content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: flex-start;
-    gap: 1.25rem;
   }
 
   /* Main Button Styling */
   .btn-main {
-    background-color: var(--clr-neutral-white);
-    color: var(--clr-primary-mainbg);
-    box-shadow: 0.3px 6px 5px 1px hsla(0, 0%, 0%, 0.2);
-    text-decoration: none;
-    border: 0.063rem solid var(--clr-neutral-white);
-    border-radius: 64px;
     padding: 0.8rem 4rem;
     font-size: 1.1rem;
-    font-family: var(--ff-accent);
-    font-weight: var(--fw-regular-400);
-    transition: all 250ms ease-in-out;
   }
 
-  /* Button Hover Styling */
-  .btn-main:hover {
-    background-color: var(--clr-primary-hover-active);
-    color: var(--clr-neutral-white);
-    border-color: var(--clr-primary-hover-active);
-  }
   /* Main Header Styling */
   h2 {
-    font-family: var(--ff-accent);
-    font-weight: var(--fw-semibold-600);
     font-size: 3rem;
+    max-width: 35rem;
   }
 
   /* Main Paragraph Styling */
   p {
     max-width: 32rem;
+    font-size: 1.13rem;
   }
 
   /* Footer Styling */
   footer {
-    display: flex;
-    align-items: center;
+    flex-direction: row;
     justify-content: space-between;
   }
 
-  /* Footer Social Media Styling */
+  /* Footer Social Media List Styling */
   .horizontal-list {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
     margin-right: 5rem;
   }
 
   .horizontal-list a {
     width: 2.5rem;
     height: 2.5rem;
-    text-decoration: none;
-    border: 0.06rem solid var(--clr-neutral-white);
-    border-radius: 50%;
-    padding: 0.5rem;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    color: var(--clr-neutral-white);
-    font-size: 1rem;
-    transition: all 250ms ease-in-out;
   }
   /* Footer Attribution Styling */
   .attribution {
     font-size: 1rem;
-    text-align: center;
     margin-left: 5rem;
-  }
-
-  .attribution a {
-    color: var(--clr-neutral-white);
-    transition: all 250ms ease-in-out;
-  }
-
-  /* Footer Hover Styling */
-  .attribution a:hover,
-  .horizontal-list a:hover {
-    color: var(--clr-primary-hover-active);
-    border-color: var(--clr-primary-hover-active);
-    text-decoration: none;
   }
 }
