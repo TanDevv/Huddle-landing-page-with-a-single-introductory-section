@@ -105,6 +105,7 @@ I did learn about FontAwesome and I like how easy it is to find SVG icons! I not
 ## Useful Resources
 
 - [object-fit](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit)
+- [Font Awesome](https://fontawesome.com/)
 
 ## Author
 
